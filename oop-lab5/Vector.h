@@ -96,7 +96,7 @@ inline T& Vector<T>::operator[](int index)
 template<class T>
 Vector<T> Vector<T>::operator+(const T value)
 {
-	Vector<T> temp(this);
+	Vector<T> temp(*this);
 	for (int i = 0; i < temp.size; i++)
 	{
 		temp.data[i] = temp.data[i] + value;

@@ -7,7 +7,8 @@ int main()
 	Vector<int> test(4);
 	cout << test() << endl;
 	cin >> test;
-	cout << test;
+	cout << test << endl;
+	cout << test + 4 << endl;
 
 	return 0;
 }
