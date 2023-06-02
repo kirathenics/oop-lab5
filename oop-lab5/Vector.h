@@ -87,9 +87,9 @@ Vector<T>& Vector<T>::operator=(const Vector<T>& object)
 }
 
 template<class T>
-inline T& Vector<T>::operator[](int index)
+T& Vector<T>::operator[](int index)
 {
-	if (index > this->size || index < 0) return T();
+	if (index > this->size || index < 0) throw exception("Выход за пределы вектора!");
 	return this->data[index];
 }
 
@@ -99,7 +99,7 @@ Vector<T> Vector<T>::operator+(const T value)
 	Vector<T> temp(*this);
 	for (int i = 0; i < temp.size; i++)
 	{
-		temp.data[i] = temp.data[i] + value;
+		temp.data[i] += value;
 	}
 	return temp;
 }

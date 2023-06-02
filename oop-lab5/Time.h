@@ -18,9 +18,6 @@ public:
 	int getSeconds();
 
 	Time& operator=(const Time&);
-	bool operator >(const Time&);
-	bool operator <(const Time&);
-	float operator -(const Time&);
 	Time& operator+=(const Time&);
 
 	friend ostream& operator<< (ostream&, const Time&);
@@ -70,21 +67,6 @@ Time& Time::operator=(const Time& object)
 		this->seconds = object.seconds;
 	}
 	return *this;
-}
-
-bool Time::operator>(const Time& object)
-{
-	return ((60 * this->minutes + this->seconds) > (60 * object.minutes + object.seconds));
-}
-
-bool Time::operator<(const Time& object)
-{
-	return !(*this > object);
-}
-
-float Time::operator-(const Time& object)
-{
-	return (60 * this->minutes + this->seconds - (60 * object.minutes + object.seconds));
 }
 
 Time& Time::operator+=(const Time& object)
